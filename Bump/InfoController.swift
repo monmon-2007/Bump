@@ -44,10 +44,13 @@ class InfoController: UIViewController, UISearchBarDelegate, UITableViewDelegate
         performSegueWithIdentifier("logOut", sender: nil)
     
     }
+    
+    
     @IBAction func addPerson(sender: AnyObject) {
         
         person.append(UserSearchResult.text!)
-        
+        UserSearchResult.text = "Added"
+        print(person)
     }
     
     
@@ -167,8 +170,9 @@ class InfoController: UIViewController, UISearchBarDelegate, UITableViewDelegate
         }
         return cell
     }
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if (throughSearch){
+        if throughSearch == true{
             desiese = filtered[indexPath.row]
             print(desiese)
         }else {
@@ -181,9 +185,12 @@ class InfoController: UIViewController, UISearchBarDelegate, UITableViewDelegate
     }
     
     func allertOtherPeople(Desiese: String){
-        for var i = person.count - 1; i > 0; i -= 1{
+        for var i = person.count - 1; i >= 0; i -= 1{
+            
+            
             
             if let phoneToMessage = userToPhone[person[i]]{
+                
                 print(phoneToMessage)
                 let twilioSID = "ACa53472c53e3e8a477617ac2bcaf6a07e"
                 let twilioSecret = "825fd297a8fe82a54997fdfa3aed05d1"
@@ -191,7 +198,7 @@ class InfoController: UIViewController, UISearchBarDelegate, UITableViewDelegate
                 //Note replace + = %2B , for To and From phone number
                 let fromNumber = "%2B16466797557"// actual number is +14803606445
                 let toNumber = "%2B1\(phoneToMessage)"// actual number is +919152346132
-                let message = "Warning, pleases get a checkup, you may have \(desiese)"
+                let message = "Warning, please get an STD checkup, you may have \(desiese) ~ The Bump Team"
         
                 // Build the request
                 let request = NSMutableURLRequest(URL: NSURL(string:"https://\(twilioSID):\(twilioSecret)@api.twilio.com/2010-04-01/Accounts/\(twilioSID)/SMS/Messages")!)

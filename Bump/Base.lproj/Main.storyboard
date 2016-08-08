@@ -310,6 +310,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="14A-Vg-cEM" id="fgr-k0-Ii2"/>
+                                    <outlet property="delegate" destination="14A-Vg-cEM" id="AM5-yP-X1P"/>
+                                </connections>
                             </tableView>
                             <searchBar tag="2" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="O7U-6M-rYg">
                                 <rect key="frame" x="-4" y="324" width="328" height="44"/>
@@ -358,16 +362,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stds:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29G-D0-hPc">
-                                <rect key="frame" x="11" y="278" width="68" height="38"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="38" id="Cn7-dn-ffS"/>
-                                    <constraint firstAttribute="width" constant="68" id="FMa-us-oSO"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utE-IS-Ozs">
                                 <rect key="frame" x="189" y="58" width="135" height="46"/>
                                 <constraints>
@@ -399,6 +393,16 @@
                                     <action selector="logOut:" destination="14A-Vg-cEM" eventType="touchUpInside" id="xif-Vb-baO"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STDs:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="29G-D0-hPc">
+                                <rect key="frame" x="11" y="278" width="68" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="Cn7-dn-ffS"/>
+                                    <constraint firstAttribute="width" constant="68" id="FMa-us-oSO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.76470588235294112" green="0.89411764705882346" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>

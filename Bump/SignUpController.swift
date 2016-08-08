@@ -11,7 +11,7 @@ import Alamofire
 import SwiftyJSON
 
 var userArray = ["Ann", "User1"]
-var userToPhone: [String : String] = ["Ann" : "3477256313" , "test1" : "7322779161"]
+var userToPhone: [String : String] = ["Ann" : "3477256313" , "User1" : "7322779161"]
 
 class SignUpController: UIViewController {
 
